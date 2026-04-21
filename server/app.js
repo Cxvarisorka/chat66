@@ -58,6 +58,13 @@ app.use('/api/auth', authRouter);
 app.use('/api/group', groupRouter);
 app.use('/api/message', messageRouter);
 
+app.use('/', (req, res) => {
+    res.status(200).json({
+        status: "success",
+        message: "Server health is okay and running!"
+    });
+});
+
 // Global error controller
 app.use(globalErrorHandler);
 
