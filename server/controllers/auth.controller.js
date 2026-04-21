@@ -27,7 +27,7 @@ const createSendToken = catchAsync(async (user, res, statusCode) => {
         httpOnly: true,
         secure: process.env.NODE_ENV == 'dev' ? false : true,
         maxAge: process.env.COOKIE_EXPIRES * 24 * 60 * 60 * 1000, // Convert days to milliseconds
-        sameSite: process.env.NODE_ENV == 'dev' ? 'Lax' : 'Strict'
+        sameSite: process.env.NODE_ENV == 'dev' ? 'Lax' : 'None'
     });
 
     // Remove password from the output for security
